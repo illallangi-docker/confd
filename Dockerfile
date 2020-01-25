@@ -2,7 +2,8 @@ FROM docker.io/fedora:31
 
 MAINTAINER Andrew Cole <andrew.cole@illallangi.com>
 
-RUN yum -y update; \
+RUN yum -y install which; \
+    yum -y update; \
     yum -y clean all
 
 COPY entrypoint.sh /entrypoint.sh
